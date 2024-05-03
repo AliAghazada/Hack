@@ -1,0 +1,20 @@
+import time
+import ctypes
+
+def my_range(param):
+    pass
+
+def virus():
+    for _ in my_range(180):  # Toplam 30 dakika boyunca çalışacak
+        ctypes.windll.user32.MessageBoxW(0, "B-Bir Şeyler Ters Gidiyor! 😈", "Trojan", 1)
+        for i in range(10):
+            ctypes.windll.user32.SetCursorPos(100 + i, 100 + i)  # Ekranı titret
+            time.sleep(0.1)
+        time.sleep(10)  # Her 10 saniyede bir mesaj göster
+
+def main():
+    time.sleep(600)  # 10 dakika bekle
+    virus()
+
+if _name_ == "_main_":
+    main()
